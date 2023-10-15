@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="\static\style.css">
+  <title>Himachal Pradesh Bus Tracking System</title>
+  <link rel="icon" href="\static\icon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="signin-signup">
+      <form action="dashboard.html" class="sign-in-form" id=""login-form>
+        <h2 class="title">Sign in</h2>
+        <form id="login-form">
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+            <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+          </div>
+          <input type="submit" value="Sign in" class="btn">
+          <p class="forgot-pass">Forgot Password ?</p>
+        </form>
+      </form>
+
+      <form action="" class="sign-up-form">
+        <h2 class="title">Sign up</h2>
+        <form id="login-form">
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" id="full_name" placeholder="Full Name" required>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" id="email" placeholder="Email" required>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="pass" placeholder="Password" required>
+            <i class="far fa-eye" id="togglepass" style="margin-left: -30px; cursor: pointer;"></i>
+          </div>
+          <input type="submit" value="Sign up" class="btn">
+        </form>
+      </form>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+
+        <div class="content">
+          <img src="\static\hplogo.png" alt="" class="image">
+          <h2>Welcome to Bus Tracking System</h2>
+          <p>Himachal Pradesh Transport Department(HPTD)</p>
+          <button class="btn" id="sign-in-btn">Sign in</button>
+        </div>
+
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <img src="\static\hplogo.png" alt="" class="image">
+          <h2>Welcome to Bus Tracking System</h2>
+          <p>Himachal Pradesh Transport Department(HPTD)</p>
+          <button class="btn" id="sign-up-btn">Sign up</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    const pass = document.querySelector('#pass');
+
+    togglePassword.addEventListener('click', function (e) {
+      // Toggle the type attribute for both "password" and "pass" elements
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      const typePass = pass.getAttribute('type') === 'password' ? 'text' : 'password';
+
+      password.setAttribute('type', type);
+      pass.setAttribute('type', typePass);
+
+      // Toggle the eye slash icon for the button if needed
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+
+  <script src="\static\script.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="\static\base.js"></script>
+
+</body>
+
+</html>
