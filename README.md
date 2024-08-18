@@ -186,8 +186,11 @@ Open your web browser and go to http://localhost:your_preferred_port.
 ⭐️ Support the Project
 If you find this project helpful, please consider giving it a star on GitHub! Your support helps to grow the project and reach more contributors.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Show some ❤️ by starring this awesome repository!
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+</div>
 
 Contact
 For any questions or inquiries, you can reach me at: anujobadhikari@gmail.com
