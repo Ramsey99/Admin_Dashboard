@@ -33,6 +33,7 @@ This repository contains the Admin Dashboard for a public bus transportation sys
 * [Installation](https://github.com/Ramsey99/Admin_Dashboard?tab=readme-ov-file#installation)
 * [Contributing](https://github.com/Ramsey99/Admin_Dashboard?tab=readme-ov-file#contributing)
 * [License](https://github.com/Ramsey99/Admin_Dashboard?tab=readme-ov-file#license)
+* [Contact](https://github.com/Ramsey99/Admin_Dashboard?tab=readme-ov-file#contact)
 
 
 ## Features
@@ -190,7 +191,7 @@ If you find this project helpful, please consider giving it a star on GitHub! Yo
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-</div>
 
-Contact
+## Contact
 For any questions or inquiries, you can reach me at: anujobadhikari@gmail.com
+</div>
