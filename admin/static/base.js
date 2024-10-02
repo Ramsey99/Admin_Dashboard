@@ -1,135 +1,114 @@
+// Ideally, store Firebase config in environment variables and access it securely on the server side.
 var firebaseConfig = {
-    apiKey: "AIzaSyBDfoVxjQd2Rvbg7mJZSS4ugfn2qtdW16I",
-    authDomain: "singup-aa8c7.firebaseapp.com",
-    databaseURL: "https://singup-aa8c7-default-rtdb.firebaseio.com",
-    projectId: "singup-aa8c7",
-    storageBucket: "singup-aa8c7.appspot.com",
-    messagingSenderId: "103136147192",
-    appId: "1:103136147192:web:f7c90dc3c11fd7f8be6d0d",
-    measurementId: "G-DCWHS5WQ7T"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  // Initialize variables
-  const auth = firebase.auth()
-  const database = firebase.database()
-  
-  // Set up our register function
-  function register () {
-    // Get all our input fields
-    full_name = document.getElementById('full_name').value
-    email = document.getElementById('email').value
-    password = document.getElementById('pass').value
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or Password is wrong')
-      return
-      // Don't continue running the code
-    }
-   
-    // Move on with Auth
-    auth.createUserWithEmailAndPassword(email, password)
+  apiKey: process.env.FIREBASE_API_KEY, // Use environment variables on the server side
+  authDomain: "singup-aa8c7.firebaseapp.com",
+  databaseURL: "https://singup-aa8c7-default-rtdb.firebaseio.com",
+  projectId: "singup-aa8c7",
+  storageBucket: "singup-aa8c7.appspot.com",
+  messagingSenderId: "103136147192",
+  appId: "1:103136147192:web:f7c90dc3c11fd7f8be6d0d",
+  measurementId: "G-DCWHS5WQ7T"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize variables
+const auth = firebase.auth();
+const database = firebase.database();
+
+// Set up our register function
+function register() {
+  // Declare variables with let to ensure proper scope
+  let full_name = document.getElementById('full_name').value;
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('pass').value;
+
+  // Validate input fields
+  if (!validate_email(email) || !validate_password(password)) {
+    alert('Email or Password is wrong');
+    return;
+  }
+
+  // Move on with Auth
+  auth.createUserWithEmailAndPassword(email, password)
     .then(function() {
       // Declare user variable
-      var user = auth.currentUser
-  
+      const user = auth.currentUser;
+
       // Add this user to Firebase Database
-      var database_ref = database.ref()
-  
-      // Create User data
-      var user_data = {
-        full_name : full_name,
-        username : username,
-        last_login : Date.now()
-      }
-  
+      const database_ref = database.ref();
+
+      // Create User data, use a proper username if necessary
+      const user_data = {
+        full_name: full_name,
+        username: email, // Use email as username for now, since no username input field exists
+        last_login: Date.now()
+      };
+
       // Push to Firebase Database
-      database_ref.child('users/' + user.uid).set(user_data)
-  
-      // DOne
-      alert('User Created!!')
+      database_ref.child('users/' + user.uid).set(user_data);
+
+      // Done
+      alert('User Created!!');
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
-  
-      alert(error_message)
-    })
+      const error_message = error.message;
+      alert(error_message);
+    });
+}
+
+// Set up our login function
+function login() {
+  // Declare variables with let to ensure proper scope
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('pass').value;
+
+  // Validate input fields
+  if (!validate_email(email) || !validate_password(password)) {
+    alert('Email or Password is Wrong');
+    return;
   }
-  
-  // Set up our login function
-  function login () {
-    // Get all our input fields
-    username = document.getElementById('email').value
-    password = document.getElementById('pass').value
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or Password is Wrong')
-      return
-      // Don't continue running the code
-    }
-  
-    auth.signInWithEmailAndPassword(email, password)
+
+  auth.signInWithEmailAndPassword(email, password)
     .then(function() {
       // Declare user variable
-      var user = auth.currentUser
-  
+      const user = auth.currentUser;
+
       // Add this user to Firebase Database
-      var database_ref = database.ref()
-  
+      const database_ref = database.ref();
+
       // Create User data
-      var user_data = {
-        last_login : Date.now()
-      }
-  
+      const user_data = {
+        last_login: Date.now()
+      };
+
       // Push to Firebase Database
-      database_ref.child('users/' + user.uid).update(user_data)
-  
-      // DOne
-      alert('User Logged In!!')
-  
+      database_ref.child('users/' + user.uid).update(user_data);
+
+      // Done
+      alert('User Logged In!!');
     })
     .catch(function(error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
-  
-      alert(error_message)
-    })
-  }
-  
-  // Validate Functions
-  function validate_username(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
-    if (expression.test(email) == true) {
-      // Email is good
-      return true
-    } else {
-      // Email is not good
-      return false
-    }
-  }
-  
-  function validate_password(password) {
-    // Firebase only accepts lengths greater than 6
-    if (password < 6) {
-      return false
-    } else {
-      return true
-    }
-  }
-  
-  function validate_field(field) {
-    if (field == null) {
-      return false
-    }
-  
-    if (field.length <= 0) {
-      return false
-    } else {
-      return true
-    }
-  }
+      const error_message = error.message;
+      alert(error_message);
+    });
+}
+
+// Validate email function (renamed from validate_username)
+function validate_email(email) {
+  const expression = /^[^@]+@\w+(\.\w+)+\w$/;
+  return expression.test(email); // Return true if valid, false if not
+}
+
+// Validate password function (fixed logic)
+function validate_password(password) {
+  // Check password length
+  return password.length >= 6;
+}
+
+// Validate any field function
+function validate_field(field) {
+  return field != null && field.length > 0;
+}
