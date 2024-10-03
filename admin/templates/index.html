@@ -8,17 +8,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <link rel="stylesheet" href="\static\style.css">
+  <link rel="stylesheet" href="/static/style.css">
   <title>Himachal Pradesh Bus Tracking System</title>
-  <link rel="icon" href="\static\icon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/icon.ico" type="image/x-icon">
 </head>
 
 <body>
   <div class="container">
     <div class="signin-signup">
-      <form action="dashboard.html" class="sign-in-form" id=""login-form>
+      <form action="dashboard.html" class="sign-in-form" id="login-form">
         <h2 class="title">Sign in</h2>
-        <form id="login-form">
+        <form id="sign-in-form">
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" required>
@@ -35,7 +35,7 @@
 
       <form action="" class="sign-up-form">
         <h2 class="title">Sign up</h2>
-        <form id="login-form">
+        <form id="sign-in-form">
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" id="full_name" placeholder="Full Name" required>
@@ -58,7 +58,7 @@
       <div class="panel left-panel">
 
         <div class="content">
-          <img src="\static\hplogo.png" alt="" class="image">
+          <img src="/static/hplogo.png" alt="" class="image">
           <h2>Welcome to Bus Tracking System</h2>
           <p>Himachal Pradesh Transport Department(HPTD)</p>
           <button class="btn" id="sign-in-btn">Sign in</button>
@@ -67,7 +67,7 @@
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <img src="\static\hplogo.png" alt="" class="image">
+          <img src="/static/hplogo.png" alt="" class="image">
           <h2>Welcome to Bus Tracking System</h2>
           <p>Himachal Pradesh Transport Department(HPTD)</p>
           <button class="btn" id="sign-up-btn">Sign up</button>
@@ -80,26 +80,29 @@
   <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
+    const togglePass = document.querySelector('#togglepass');
     const pass = document.querySelector('#pass');
 
     togglePassword.addEventListener('click', function (e) {
       // Toggle the type attribute for both "password" and "pass" elements
       const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      const typePass = pass.getAttribute('type') === 'password' ? 'text' : 'password';
-
       password.setAttribute('type', type);
-      pass.setAttribute('type', typePass);
+      this.classList.toggle('fa-eye-slash');
+    });
 
+    togglePass.addEventListner('click', function (e) {
+      const typePass = pass.getAttribute('type') === 'password' ? 'text' : 'password';
+      pass.setAttribute('type', typePass);
       // Toggle the eye slash icon for the button if needed
       this.classList.toggle('fa-eye-slash');
     });
   </script>
 
-  <script src="\static\script.js"></script>
+  <script src="/static/script.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-  <script src="\static\base.js"></script>
+  <script src="/static/base.js"></script>
 
 </body>
 
