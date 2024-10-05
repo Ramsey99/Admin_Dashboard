@@ -183,6 +183,21 @@ Open your web browser and go to http://localhost:your_preferred_port.
     - Go to the GitHub page of your forked repository, and you should see an option to create a pull request. Click on it, provide a descriptive title and description for your pull request, and then submit it.
 
 <hr>
+
+## 👀 Our Contributors
+
+- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating Ratna-Supermarket to greater heights.
+- Make sure you show some love by giving ⭐ to our repository.
+
+<div align="center">
+
+  <a href="https://github.com/Ramsey99/Admin_Dashboard">
+    <img src="https://contrib.rocks/image?repo=Ramsey99/Admin_Dashboard&&max=1000" />
+  </a>
+</div>
+
+---
+
 <div align="center">
 ⭐️ Support the Project
 If you find this project helpful, please consider giving it a star on GitHub! Your support helps to grow the project and reach more contributors.
