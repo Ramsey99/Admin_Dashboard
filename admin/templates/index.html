@@ -1,108 +1,695 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Himachal Pradesh Bus Tracking System</title>
-    <link rel="icon" href="../static/img/icon.ico" type="image/x-icon">
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="../static/img/hplogo.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="images/fevicon.png" type=""> -->
+
+    <title> Himachal Pradesh Bus Tracking System </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style_index.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../static/css/responsive.css" rel="stylesheet" />
+
   </head>
 
   <body>
-    <div class="container">
-      <div class="signin-signup">
-        <form action="dashboard.html" class="sign-in-form" id="login-form">
-          <h2 class="title">Sign in</h2>
-          <form id="sign-in-form">
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" required>
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="password" placeholder="Password" required>
-              <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
-            </div>
-            <input type="submit" value="Sign in" class="btn">
-            <p class="forgot-pass">Forgot Password ?</p>
-          </form>
-        </form>
 
-        <form action="" class="sign-up-form">
-          <h2 class="title">Sign up</h2>
-          <form id="sign-in-form">
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" id="full_name" placeholder="Full Name" required>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="header_top">
+          <div class="container-fluid ">
+            <div class="contact_nav">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +91 9876543210
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : demo@gmail.com
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
             </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="text" id="email" placeholder="Email" required>
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="pass" placeholder="Password" required>
-              <i class="far fa-eye" id="togglepass" style="margin-left: -30px; cursor: pointer;"></i>
-            </div>
-            <input type="submit" value="Sign up" class="btn">
-          </form>
-        </form>
-      </div>
-
-      <div class="panels-container">
-        <div class="panel left-panel">
-
-          <div class="content">
-            <img src="/static/hplogo.png" alt="" class="image">
-            <h2>Welcome to Bus Tracking System</h2>
-            <p>Himachal Pradesh Transport Department(HPTD)</p>
-            <button class="btn" id="sign-in-btn">Sign in</button>
           </div>
-
         </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <img src="/static/hplogo.png" alt="" class="image">
-            <h2>Welcome to Bus Tracking System</h2>
-            <p>Himachal Pradesh Transport Department(HPTD)</p>
-            <button class="btn" id="sign-up-btn">Sign up</button>
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="#">
+                <span>
+                  Himachal Pradesh Bus Tracking System
+                </span>
+              </a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="userlogin.html"> <i class="fa fa-user" aria-hidden="true"></i> User
+                      Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Admin_login.html"> <i class="fa fa-user" aria-hidden="true"></i> Admin
+                      Login</a>
+                  </li>
+                  <form class="form-inline">
+                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </ul>
+              </div>
+            </nav>
           </div>
-
         </div>
-      </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section ">
+        <div class="slider_bg_box">
+          <img src="../static/img/bus (1).png" alt="">
+        </div>
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-7 ">
+                    <div class="detail-box">
+                      <h1>
+                        We Provide best <br>
+                        Himachal Pradesh Bus Tracking System
+                      </h1>
+                      <p> Experience seamless travel with our Himachal Pradesh Bus Tracking System—view schedules, book
+                        tickets, and access
+                        real-time bus locations, all while ensuring efficient management for drivers and administrators.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Track Bus Status
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-7 ">
+                    <div class="detail-box">
+                      <h1>
+                        We Provide best <br>
+                        Transport Service
+                      </h1>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum magnam, voluptates distinctio,
+                        officia architecto tenetur debitis hic aspernatur libero commodi atque fugit adipisci,
+                        blanditiis quidem dolorum odit voluptas? Voluptate, eveniet?
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Get A Quote
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-7 ">
+                    <div class="detail-box">
+                      <h1>
+                        We Provide best <br>
+                        Transport Service
+                      </h1>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum magnam, voluptates distinctio,
+                        officia architecto tenetur debitis hic aspernatur libero commodi atque fugit adipisci,
+                        blanditiis quidem dolorum odit voluptas? Voluptate, eveniet?
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Get A Quote
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+
+      </section>
+      <!-- end slider section -->
     </div>
 
-    <script>
-      const togglePassword = document.querySelector('#togglePassword');
-      const password = document.querySelector('#password');
-      const togglePass = document.querySelector('#togglepass');
-      const pass = document.querySelector('#pass');
 
-      togglePassword.addEventListener('click', function (e) {
-        // Toggle the type attribute for both "password" and "pass" elements
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        this.classList.toggle('fa-eye-slash');
-      });
+    <!-- service section -->
 
-      togglePass.addEventListner('click', function (e) {
-        const typePass = pass.getAttribute('type') === 'password' ? 'text' : 'password';
-        pass.setAttribute('type', typePass);
-        // Toggle the eye slash icon for the button if needed
-        this.classList.toggle('fa-eye-slash');
-      });
+    <section class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
+          <div class="heading_container">
+            <h2>
+              Our <span>Services</span>
+            </h2>
+            <p>
+              Discover a range of services designed to enhance your travel experience. Our Himachal Pradesh Bus Tracking
+              System offers
+              real-time bus tracking, easy ticket booking, and comprehensive schedule access. Whether you're a passenger
+              planning your
+              journey, a driver managing routes, or an admin overseeing operations, we provide efficient solutions that
+              ensure smooth
+              travel for everyone. Enjoy convenience, reliability, and safety with our cutting-edge technology.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-md-6 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="#" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    View Bus Schedules
+                  </h5>
+                  <p>
+                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    The
+                    point of using
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="#" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Book Tickets
+                  </h5>
+                  <p>
+                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    The
+                    point of using
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="#" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Bus Live Location
+                  </h5>
+                  <p>
+                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    The
+                    point of using
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-6 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="images/s4.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Train Transport
+                  </h5>
+                  <p>
+                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    The
+                    point of using
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end service section -->
+
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding-bottom">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  About <span>Us</span>
+                </h2>
+              </div>
+              <p>
+                At Himachal Pradesh Bus Tracking System, we are dedicated to revolutionizing the way people travel. Our
+                mission is to
+                provide a seamless and efficient travel experience through advanced technology and real-time tracking.
+                With a focus on
+                reliability and user satisfaction, we aim to connect passengers, drivers, and administrators like never
+                before. Our team
+                of experts is committed to continuously improving our services, ensuring safe and convenient journeys
+                for everyone. Join
+                us in redefining public transport in Himachal Pradesh!
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="../static/img/bus (2).png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- track section -->
+
+    <section class="track_section layout_padding">
+      <div class="track_bg_box">
+        <img src="../static/img/user.png" alt="">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="heading_container">
+              <h2>
+                Track Live Bus
+              </h2>
+            </div>
+            <p>
+              Stay updated with our real-time bus tracking feature, designed to enhance your travel experience. With
+              accurate GPS
+              technology, you can easily monitor the location of buses on their routes, ensuring you never miss a ride.
+              Our intuitive
+              interface provides live updates on bus arrivals and departures, allowing for hassle-free planning and
+              peace of mind.
+              Whether you’re at home or on the go, track your bus effortlessly and enjoy a smoother journey with us.
+            </p>
+            <form action="">
+              <input type="text" placeholder="Enter Bus Number" />
+              <button type="submit">
+                Track
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end track section -->
+
+    <!-- client section -->
+
+    <section class="client_section layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            What Says Our <span>Client</span>
+          </h2>
+        </div>
+        <div class="client_container">
+          <div class="carousel-wrap ">
+            <div class="owl-carousel">
+              <div class="item">
+                <div class="box">
+                  <div class="detail-box">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    </p>
+                  </div>
+                  <div class="client_id">
+                    <div class="img-box">
+                      <img src="../static/img/client-1.png" alt="" class="img-1">
+                    </div>
+                    <div class="name">
+                      <h6>
+                        Adipiscing
+                      </h6>
+                      <p>
+                        Magna
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="box">
+                  <div class="detail-box">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    </p>
+                  </div>
+                  <div class="client_id">
+                    <div class="img-box">
+                      <img src="../static/img/client-2.png" alt="" class="img-1">
+                    </div>
+                    <div class="name">
+                      <h6>
+                        Adipiscing
+                      </h6>
+                      <p>
+                        Magna
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="box">
+                  <div class="detail-box">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    </p>
+                  </div>
+                  <div class="client_id">
+                    <div class="img-box">
+                      <img src="../static/img/client-1.png" alt="" class="img-1">
+                    </div>
+                    <div class="name">
+                      <h6>
+                        Adipiscing
+                      </h6>
+                      <p>
+                        Magna
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="box">
+                  <div class="detail-box">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    </p>
+                  </div>
+                  <div class="client_id">
+                    <div class="img-box">
+                      <img src="../static/img/client-2.png" alt="" class="img-1">
+                    </div>
+                    <div class="name">
+                      <h6>
+                        Adipiscing
+                      </h6>
+                      <p>
+                        Magna
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end client section -->
+
+    <!-- contact section -->
+    <section class="contact_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-5 offset-md-1">
+            <div class="heading_container">
+              <h2>
+                Contact Us
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-5 offset-md-1">
+            <div class="form_container contact-form">
+              <form action="">
+                <div>
+                  <input type="text" placeholder="Your Name" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Phone Number" />
+                </div>
+                <div>
+                  <input type="email" placeholder="Email" />
+                </div>
+                <div>
+                  <input type="text" class="message-box" placeholder="Message" />
+                </div>
+                <div class="btn_box">
+                  <button>
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-6 px-0">
+            <div class="map_container">
+              <div class="map">
+                <iframe class="rounded w-100 h-100"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.77249238306!2d77.06889927915427!3d32.2211159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904a22d233da455%3A0x72d43d0f7898cb8e!2sHimachal%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1603794290143!5m2!1sen!2sin"
+                  frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-7 col-md-6 px-0">
+            <div class="map_container">
+              <div class="map">
+                <div id="googleMap"></div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- end contact section -->
+
+    <!-- info section -->
+
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+              <h4>
+                Address
+              </h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>
+                    Location
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    Call +91 9876543210
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    demo@gmail.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_detail">
+              <h4>
+                Info
+              </h4>
+              <p>
+                The Bus Management System enables customers to book tickets, drivers to access routes, and admins to
+                manage operations
+                efficiently.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 mx-auto info_col">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="active" href="index.html">
+                  <img src="images/nav-bullet.png" alt="">
+                  Home
+                </a>
+                <a class="" href="about.html">
+                  <img src="images/nav-bullet.png" alt="">
+                  About
+                </a>
+                <a class="" href="service.html">
+                  <img src="images/nav-bullet.png" alt="">
+                  Services
+                </a>
+                <a class="" href="contact.html">
+                  <img src="images/nav-bullet.png" alt="">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col ">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <section class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By Himachal Pradesh Bus Tracking System....
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
     </script>
-
-    <script src="../static/js/script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script src="../static/js/base.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="../static/js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
 
   </body>
 
