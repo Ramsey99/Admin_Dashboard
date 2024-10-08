@@ -5,7 +5,7 @@ import 'firebase/database';
 
 // Initialize Firebase
 var firebaseConfig = {
-  apiKey: "AIzaSyBDfoVxjQd2Rvbg7mJZSS4ugfn2qtdW16I",
+  apiKey: process.env.FIREBASE_API_KEY || "AIzaSyBDfoVxjQd2Rvbg7mJZSS4ugfn2qtdW16I", // Use environment variables or fallback for development
   authDomain: "singup-aa8c7.firebaseapp.com",
   databaseURL: "https://singup-aa8c7-default-rtdb.firebaseio.com",
   projectId: "singup-aa8c7",
