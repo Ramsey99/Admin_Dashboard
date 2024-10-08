@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\static\dashboard.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>eBuseo</title>
 </head>
 <body class="body">
-    <section class="header">
+    <header class="header">
         <div class="logo">
-            <i class="ri-menu-line menu"></i>
-            <h2><span>ebus</span>eo</h2>
+            <i class="ri-bus-2-line"></i>
+            <h2><span>eBus</span>eo</h2>
         </div>
         <div class="header--items">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
             <div class="dark--theme--btn">
                 <i class="ri-moon-line moon"></i>
                 <i class="ri-sun-line sun"></i>
@@ -24,9 +27,9 @@
                 <span class="icon"><i class="ri-account-circle-fill"></i></span>
             </div>
         </div>
-    </section>
-    <section class="main">
-        <div class="sidebar">
+    </header>
+    <main class="main">
+        <nav class="sidebar">
             <ul class="sidebar--items">
                 <li>
                     <a href="#" class="active">
@@ -58,23 +61,86 @@
                         <div class="sidebar--item">Settings</div>
                     </a>
                 </li>
-            </ul>
-            <ul class="sidebar--bottom--items">
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="ri-question-line"></i></span>
-                        <div class="sidebar--item">Help</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="ri-arrow-drop-left-line"></i></span>
-                        <div class="sidebar--item">Collapse</div>
+                    <a href="#" class="dropdown">
+                        <span class="icon"><i class="ri-information-line"></i></span>
+                        <div class="sidebar--item">More</div>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
                     </a>
                 </li>
             </ul>
-        </div>
-        <script src="\static\dashboard.js"></script>
-        
+        </nav>
+        <section class="content">
+            <h1>Dashboard</h1>
+            <div class="card">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Active Buses</h3>
+                    <p>12 Buses Active</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Bus Routes</h3>
+                    <p>8 Routes Available</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Drivers</h3>
+                    <p>15 Registered Drivers</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Upcoming Trips</h3>
+                    <p>4 Trips Scheduled</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 eBuseo. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/dashboard.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: '# of Rides',
+                    data: [12, 19, 3, 5, 2, 3, 7],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

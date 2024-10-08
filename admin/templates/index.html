@@ -3,14 +3,119 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Admin Dashboard</title>
+    
+</head>
+<body>
+    <div id="app"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css">
   <title>Himachal Pradesh Bus Tracking System</title>
   <link rel="icon" href="/static/icon.ico" type="image/x-icon">
+  <style>
+    body {
+      background: linear-gradient(135deg, #3bc59a, #e9edf1);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      display: flex;
+    }
+
+    .signin-signup {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #3bc59a;
+    }
+
+    .input-field {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-field i {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #888;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 10px 40px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    .input-field input:focus {
+      border-color: #3bc59a;
+      outline: none;
+    }
+
+    .btn {
+      background-color: #3bc59a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #30a27e;
+    }
+
+    .panels-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+
+    .panel {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .image {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -18,61 +123,54 @@
     <div class="signin-signup">
       <form action="dashboard.html" class="sign-in-form" id="login-form">
         <h2 class="title">Sign in</h2>
-        <form id="sign-in-form">
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" required>
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Password" required>
-            <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
-          </div>
-          <input type="submit" value="Sign in" class="btn">
-          <p class="forgot-pass">Forgot Password ?</p>
-        </form>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Password" required>
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+        </div>
+        <input type="submit" value="Sign in" class="btn">
+        <p class="forgot-pass">Forgot Password?</p>
       </form>
 
       <form action="" class="sign-up-form">
         <h2 class="title">Sign up</h2>
-        <form id="sign-in-form">
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" id="full_name" placeholder="Full Name" required>
-          </div>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="text" id="email" placeholder="Email" required>
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="pass" placeholder="Password" required>
-            <i class="far fa-eye" id="togglepass" style="margin-left: -30px; cursor: pointer;"></i>
-          </div>
-          <input type="submit" value="Sign up" class="btn">
-        </form>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" id="full_name" placeholder="Full Name" required>
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="pass" placeholder="Password" required>
+          <i class="far fa-eye" id="togglepass" style="margin-left: -30px; cursor: pointer;"></i>
+        </div>
+        <input type="submit" value="Sign up" class="btn">
       </form>
     </div>
 
     <div class="panels-container">
       <div class="panel left-panel">
-
         <div class="content">
           <img src="/static/hplogo.png" alt="" class="image">
           <h2>Welcome to Bus Tracking System</h2>
-          <p>Himachal Pradesh Transport Department(HPTD)</p>
+          <p>Himachal Pradesh Transport Department (HPTD)</p>
           <button class="btn" id="sign-in-btn">Sign in</button>
         </div>
-
       </div>
       <div class="panel right-panel">
         <div class="content">
           <img src="/static/hplogo.png" alt="" class="image">
           <h2>Welcome to Bus Tracking System</h2>
-          <p>Himachal Pradesh Transport Department(HPTD)</p>
+          <p>Himachal Pradesh Transport Department (HPTD)</p>
           <button class="btn" id="sign-up-btn">Sign up</button>
         </div>
-
       </div>
     </div>
   </div>
@@ -83,17 +181,15 @@
     const togglePass = document.querySelector('#togglepass');
     const pass = document.querySelector('#pass');
 
-    togglePassword.addEventListener('click', function (e) {
-      // Toggle the type attribute for both "password" and "pass" elements
+    togglePassword.addEventListener('click', function () {
       const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
       password.setAttribute('type', type);
       this.classList.toggle('fa-eye-slash');
     });
 
-    togglePass.addEventListner('click', function (e) {
+    togglePass.addEventListener('click', function () {
       const typePass = pass.getAttribute('type') === 'password' ? 'text' : 'password';
       pass.setAttribute('type', typePass);
-      // Toggle the eye slash icon for the button if needed
       this.classList.toggle('fa-eye-slash');
     });
   </script>
