@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #828a8e;
+  background: #1d72c1;
   font-family: 'Nunito', sans-serif;
   
 }
@@ -244,4 +244,8 @@ a {
   form {
       width: 90%;
   }
+}
+
+.text-black{
+  color: white;
 }

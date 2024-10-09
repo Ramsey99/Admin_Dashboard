@@ -189,6 +189,11 @@ a.active{
     justify-content: center;
     position: relative;
 }
+.help{
+
+    border: none;
+    
+}
 
 .sidebar .icon{
     margin-right: 20px;
