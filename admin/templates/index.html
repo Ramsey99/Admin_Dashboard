@@ -34,6 +34,8 @@
     <!-- responsive style -->
     <link href="../static/css/responsive.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
 
   <body>
@@ -234,9 +236,7 @@
                     View Bus Schedules
                   </h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The
-                    point of using
+                    Easily check up-to-date schedules for any bus route. Get detailed departure times, frequency, and destinations. Stay informed about upcoming changes to ensure you’re always on time for your trip.
                   </p>
                   <a href="">
                     Read More
@@ -254,9 +254,7 @@
                     Book Tickets
                   </h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The
-                    point of using
+                    Quickly book bus tickets online with our streamlined process. Choose your destination, select your seat, and make your payment securely. Receive instant confirmation and e-tickets for easy boarding.
                   </p>
                   <a href="">
                     Read More
@@ -274,9 +272,7 @@
                     Bus Live Location
                   </h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The
-                    point of using
+                    Track your bus in real-time and know exactly where it is on its route. Avoid long waits by knowing how far the bus is from your stop, allowing you to plan your journey more efficiently.
                   </p>
                   <a href="">
                     Read More
@@ -502,6 +498,76 @@
       </div>
     </section>
 
+
+    <section class="faq" id="faq"></section>
+    <div class="container_1">
+        <div class="accordion__wrapper">
+            <h1 class="accordion__title">Frequently Asked Questions</h1>
+            <br>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How can I view the bus schedule?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You can view the bus schedule by navigating to the "View Bus Schedules" section in the app, where you can find bus timings, routes, and any updates on stoppages.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How do I book a bus ticket?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">To book a bus ticket, go to the "Book Tickets" section in the app. Select your preferred route, date, and time, then confirm your booking by following the on-screen instructions.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How can I track the bus in real-time?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You can track the real-time location of the bus from the "Bus Location Tracking" feature. It shows you the live position of the bus on a map, along with the estimated arrival time at your stop.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Can I reschedule my bus ticket?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, you can reschedule your bus ticket through the app. Visit the "My Bookings" section, select your booking, and follow the steps to change the date or time of your ticket.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How do I contact customer support for bus-related issues?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="fa-solid fa-plus"></i> 
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You can contact customer support through the app's contact form, or call our helpline at 123-456-7890 for immediate assistance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
     <!-- end client section -->
 
     <!-- contact section -->
@@ -690,7 +756,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
     </script>
     <!-- End Google Map -->
-
+<!-- faq section -->
+    <script src="..\static\js\script.js"></script>
   </body>
 
 </html>
