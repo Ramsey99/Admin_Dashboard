@@ -129,19 +129,10 @@ a:focus {
 }
 
 .header_section {
-  .header_top {
-    padding: 15px 0;
-    background-color: $primary2;
-
-
-    .contact_nav {
-      display: flex;
-      justify-content: space-between;
-
       a {
         color: $white;
         display: flex;
-        font-size: 15px;
+        font-size: 45px;
 
         i {
           margin-right: 5px;
@@ -162,10 +153,9 @@ a:focus {
         }
       }
     }
-  }
 
   .header_bottom {
-    background-color: $white;
+    background-color:darkorchid;
     padding: 15px 0;
 
     .container-fluid {
@@ -175,7 +165,7 @@ a:focus {
 
   }
 
-}
+
 
 
 
@@ -428,7 +418,7 @@ a:focus {
   .box {
     display: flex;
     margin-top: 45px;
-    background-color: #f8f8f9;
+    background-color: #dedee6;
     padding: 20px;
     border-radius: 5px;
 
