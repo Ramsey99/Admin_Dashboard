@@ -92,6 +92,29 @@
   text-decoration: none;
   cursor: pointer;
 }
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,td{
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+th{
+  background-color: #007bff;
+  color: white;
+
+}
+.search-filter,.add-schedule{
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
   </style>
 </head>
@@ -157,6 +180,44 @@
       </div>
     </div>
   </div>
+  <!--Search filter-->
+  <div class="search-filter">
+    <input type="text" id="search-input" placeholder="Search for bus schedules..." />
+    <select id="filter-status">
+        <option value="">All</option>
+        <option value="on-time">On Time</option>
+        <option value="delayed">Delayed</option>
+        <option value="canceled">Canceled</option>
+    </select>
+</div>
+
+<div class="add-schedule">
+    <h3>Add New Schedule</h3>
+    <input type="text" id="bus-number" placeholder="Bus Number" required />
+    <input type="text" id="route" placeholder="Route" required />
+    <input type="text" id="departure-time" placeholder="Departure Time" required />
+    <select id="status">
+        <option value="on-time">On Time</option>
+        <option value="delayed">Delayed</option>
+        <option value="canceled">Canceled</option>
+    </select>
+    <button id="add-schedule-btn">Add Schedule</button>
+</div>
+
+<table id="bus-schedules">
+    <thead>
+        <tr>
+            <th>Bus Number</th>
+            <th>Route</th>
+            <th>Departure Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows will be dynamically inserted here -->
+    </tbody>
+</table>
+  
   <!-- Forgot Password Modal -->
 <div id="forgot-password-modal" class="modal">
     <div class="modal-content">
@@ -211,6 +272,83 @@
         notification.classList.remove('show');
       }, 3000);
     }
+     //search-filter 
+    const searchInput = document.getElementById('search-input');
+    const filterStatus = document.getElementById('filter-status');
+    const busSchedulesTable = document.getElementById('bus-schedules');
+
+    const busSchedules = [
+    { number: "HP-01", route: "Shimla to Manali", departureTime: "09:00 AM", status: "on-time" },
+        { number: "HP-02", route: "Dharamshala to Delhi", departureTime: "10:00 AM", status: "delayed" },
+        { number: "HP-03", route: "Manali to Shimla", departureTime: "11:00 AM", status: "on-time" },
+        { number: "HP-04", route: "Chandigarh to Manali", departureTime: "12:00 PM", status: "canceled" },
+        { number: "HP-05", route: "Kullu to Delhi", departureTime: "1:00 PM", status: "on-time" },
+        { number: "HP-06", route: "Shimla to Kinnaur", departureTime: "2:00 PM", status: "on-time" },
+        { number: "HP-07", route: "Manali to Kullu", departureTime: "3:00 PM", status: "delayed" },
+        { number: "HP-08", route: "Dharamshala to Manali", departureTime: "4:00 PM", status: "on-time" }
+    ];
+
+    function displaySchedules(schedules){
+      busSchedulesTable.innerHTML = "";
+      schedules.forEach(schedule =>{
+        const row = busSchedulesTable.insertRow();
+        row.insertCell(0).textContent = schedule.number;
+        row.insertCell(1).textContent = schedule.route;
+        row.insertCell(2).textContent = schedule.departureTime;
+        row.insertCell(3).textContent = schedule.status;
+      });
+    }
+
+    function filterSchedule(){
+      const searchText = searchInput.value.toLowerCase();
+      const selectedStatus = filterStatus.value;
+
+      const filteredSchedule = busSchedules.filter(schedule =>{
+        const matchesSearch = schedule.route.toLowerCase().includes(searchText) ||
+                              schedule.number.toLowerCase().includes(searchText);
+        const matchesStatus = selectedStatus ? schedule.status === selectedStatus : true;
+        return matchesSearch && matchesStatus;
+
+      });
+
+      displaySchedules(filteredSchedule);
+    }
+
+    searchInput.addEventListener('input',filterSchedule);
+    filterStatus.addEventListener('change',filterSchedule);
+
+    displaySchedules(busSchedules);
+
+    //Add functionality for Add Schedule button
+    const addScheduleBtn = document.getElementById('add-schedule-btn');
+
+    addScheduleBtn.addEventListener('click', function (event) {
+    event.preventDefault(); 
+
+    // Get the input values
+    const busNumber = document.getElementById('bus-number').value;
+    const route = document.getElementById('route').value;
+    const departureTime = document.getElementById('departure-time').value;
+    const status = document.getElementById('status').value;
+
+    // Validate input values
+    if (busNumber && route && departureTime) {
+        // Add the new schedule to the busSchedules array
+        busSchedules.push({ number: busNumber, route: route, departureTime: departureTime, status: status });
+
+        // Clear the input fields
+        document.getElementById('bus-number').value = '';
+        document.getElementById('route').value = '';
+        document.getElementById('departure-time').value = '';
+        document.getElementById('status').value = 'on-time'; // Reset status to default
+
+        // Refresh the displayed schedules
+        displaySchedules(busSchedules);
+    } else {
+        showNotification("Please fill in all fields.");
+    }
+});
+    
 
     // Validate sign-up form
     document.getElementById('signup-form').addEventListener('submit', function (e) {
