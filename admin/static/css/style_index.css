@@ -1046,3 +1046,39 @@ a:focus {
   color: #333333;
   font-size: 18px;
 }
+
+/* Back to top button */
+#BacktoTop {
+  display: block; 
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  width: 50px;  
+  height: 50px; 
+  background-color: #0a97b0; 
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px; 
+  font-size: 24px;  
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.circle1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#BacktoTop:hover {
+  background-color: #065968; /* Darker shade on hover */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#BacktoTop svg {
+  fill: white;
+}
