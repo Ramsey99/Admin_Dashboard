@@ -700,13 +700,28 @@ a:focus {
 .client_section .owl-carousel .owl-nav .owl-next {
   width: 50px;
   height: 50px;
-  background-size: 18px;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: -15%;
-  outline: none;
   background-color: #0a97b0;
+  outline: none;
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev::before,
+.client_section .owl-carousel .owl-nav .owl-next::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: white;
+  font-size: 18px;
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev::before {
+  content: "\f077"; /* Font Awesome Unicode for up arrow */
+}
+
+.client_section .owl-carousel .owl-nav .owl-next::before {
+  content: "\f078"; /* Font Awesome Unicode for down arrow */
 }
 
 .client_section .owl-carousel .owl-nav .owl-prev:hover,
@@ -715,13 +730,14 @@ a:focus {
 }
 
 .client_section .owl-carousel .owl-nav .owl-prev {
-  top: 25%;
-  background-image: url(../images/prev.png);
+  top: 10%;
+  right: -10%;
 }
 
 .client_section .owl-carousel .owl-nav .owl-next {
+  bottom: 10%;
+  right: -10%;
   top: calc(25% + 65px);
-  background-image: url(../images/next.png);
 }
 
 .contact_section {
